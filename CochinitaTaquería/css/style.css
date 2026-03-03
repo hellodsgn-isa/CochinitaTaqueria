@@ -1,0 +1,283 @@
+/* ============================================
+   style.css - Cochinita Taquería
+   Estilos personalizados (v5.0)
+   ============================================ */
+
+:root {
+    --rojo-mexicano: #d32f2f;
+    --amarillo-mostaza: #ffc107;
+    --crema-fondo: #fefbf7;
+}
+
+body {
+    background-color: var(--crema-fondo);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--rojo-mexicano) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.navbar .nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--amarillo-mostaza);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Botón personalizado */
+.btn-custom {
+    background-color: var(--amarillo-mostaza);
+    color: #333;
+    border-radius: 50px;
+    padding: 0.8rem 2.5rem;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-custom:hover {
+    background-color: #ffb300;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    color: #333;
+}
+
+/* Cards del menú */
+.menu-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+    border: none;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    height: 180px;
+    background-color: #f5f5f5;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--amarillo-mostaza), var(--rojo-mexicano));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.menu-card h4 {
+    color: var(--rojo-mexicano);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.menu-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Estilos para imágenes del menú */
+.menu-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-img {
+    transform: scale(1.1);
+}
+
+/* Mantener el overflow hidden para que el zoom no se salga de la card */
+.menu-card {
+    overflow: hidden;
+}
+
+/* Sección de reservas */
+.reservas-section {
+    background-color: #f8f9fa;
+}
+
+.reservas-form {
+    background-color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.reservas-panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Formulario */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    padding: 0.6rem 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--amarillo-mostaza);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.form-label {
+    color: #333;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* Botón de reservar */
+.btn-reservar {
+    background-color: var(--rojo-mexicano);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+.btn-reservar:hover {
+    background-color: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(183, 28, 28, 0.4);
+    color: white;
+}
+
+/* Items de reserva en la lista */
+.reserva-item {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--amarillo-mostaza);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.reserva-item:hover {
+    transform: translateX(3px);
+    background-color: #f1f3f5;
+}
+
+.reserva-item small {
+    color: #6c757d;
+}
+
+/* Badges de distribución */
+.badge.bg-danger {
+    background-color: var(--rojo-mexicano) !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.badge.bg-warning {
+    background-color: var(--amarillo-mostaza) !important;
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.badge.bg-success {
+    background-color: #28a745 !important;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    margin-top: 3rem;
+}
+
+.footer a {
+    color: var(--amarillo-mostaza);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 40vh;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.2rem !important;
+    }
+    
+    .reservas-form, .reservas-panel {
+        padding: 1.2rem;
+    }
+}
+
+/* Utilidades */
+.text-mexican-red {
+    color: var(--rojo-mexicano);
+}
+
+.bg-mexican-yellow {
+    background-color: var(--amarillo-mostaza);
+}

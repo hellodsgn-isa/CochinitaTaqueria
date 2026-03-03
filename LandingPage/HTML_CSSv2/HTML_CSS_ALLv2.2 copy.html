@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cochinita Taquería | Versión todo en uno (HTML+CSS)</title>
+    <!-- Enlace a Font Awesome para iconos sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- 
+        ============================================
+        ESTILOS CSS INTEGRADOS (dentro de <style>)
+        ============================================
+        Esto es exactamente el mismo CSS de la versión 2.2,
+        pero pegado aquí para que todo esté en un solo archivo.
+    -->
+    <style>
+        /* ---- Reset básico y estilos globales ---- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafef7;
+        }
+
+        /* ---- Header (Cabecera) ---- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #d32f2f;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: border-bottom 0.3s;
+            padding-bottom: 5px;
+        }
+
+        .nav-menu a:hover {
+            border-bottom: 3px solid #ffc107;
+        }
+
+        /* ---- Hero Section ---- */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://placehold.co/1920x600') center/cover;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ---- Botones (estilo base) ---- */
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #ffb300;
+            transform: scale(1.05);
+        }
+
+        /* ---- Sección Menú ---- */
+        .menu-section {
+            padding: 4rem 5%;
+            text-align: center;
+            background-color: white;
+        }
+
+        .menu-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #d32f2f;
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-section h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #ffc107;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-card {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ffc107, #d32f2f);
+            opacity: 0.7;
+        }
+
+        .menu-card h4 {
+            font-size: 1.4rem;
+            margin: 1rem 0 0.5rem;
+            color: #333;
+        }
+
+        .menu-card p {
+            padding: 0 1rem 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ---- Sección Reservas ---- */
+        .reservas-section {
+            background-color: #f0f0f0;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .reservas-section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #d32f2f;
+        }
+
+        .reservas-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ffc107;
+            box-shadow: 0 0 0 3px rgba(255,193,7,0.2);
+        }
+
+        .btn-reservar {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            background-color: #d32f2f;
+            color: white;
+        }
+        .btn-reservar:hover {
+            background-color: #b71c1c;
+            transform: none;
+        }
+
+        /* ---- Footer ---- */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-direccion {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: #ffc107;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffc107;
+            transform: translateY(-3px);
+        }
+
+        /* ---- Responsividad básica ---- */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-menu ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <!-- FIN DE LOS ESTILOS CSS INTEGRADOS -->
+</head>
+<body>
+
+    <!-- 
+        ==================================================
+        CABECERA (Header)
+        ==================================================
+    -->
+    <header class="header">
+        <div class="logo">
+            <h1>Cochinita Taquería</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+        ==================================================
+        CONTENIDO PRINCIPAL (Main)
+        ==================================================
+    -->
+    <main>
+
+        <!-- 
+            SECCIÓN HERO 
+        -->
+        <section id="inicio" class="hero">
+            <h2>La Taquería Más Auténtica de Chile</h2>
+            <p>Tacos al pastor, cochinita pibil, elotes y mucho sabor mexicano</p>
+            <a href="#menu" class="btn">Ver Menú</a>
+        </section>
+
+        <!-- 
+            SECCIÓN MENÚ DESTACADO 
+        -->
+        <section id="menu" class="menu-section">
+            <h3>Nuestro Menú</h3>
+            <div class="menu-grid">
+                <!-- Card 1 -->
+                <article class="menu-card">
+                    <div class="card-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <h4>Taco al Pastor</h4>
+                    <p>Carne marinada, piña, cilantro y cebolla. Un clásico.</p>
+                </article>
+                <!-- Card 2 -->
+                <article class="menu-card">
+                    <div class="card-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <h4>Cochinita Pibil</h4>
+                    <p>Cochinita, cebolla morada y habanero. Tradición yucateca.</p>
+                </article>
+                <!-- Card 3 -->
+                <article class="menu-card">
+                    <div class="card-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <h4>Quesadilla</h4>
+                    <p>Queso derretido con la proteína de tu elección.</p>
+                </article>
+                <!-- Card 4 -->
+                <article class="menu-card">
+                    <div class="card-image">
+                        <div class="image-placeholder"></div>
+                    </div>
+                    <h4>Elote Callejero</h4>
+                    <p>Elote, mayonesa, queso y chile en polvo. Perfecto para picar.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            SECCIÓN FORMULARIO DE RESERVAS
+        -->
+        <section id="reservas" class="reservas-section">
+            <h3>Reserva tu Mesa</h3>
+            <form action="#" method="post" class="reservas-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div class="form-group">
+                    <label for="personas">Número de Personas</label>
+                    <input type="number" id="personas" name="personas" min="1" max="10" required>
+                </div>
+                <button type="submit" class="btn btn-reservar">Reservar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- 
+        ==================================================
+        PIE DE PÁGINA (Footer)
+        ==================================================
+    -->
+    <footer class="footer">
+        <div class="footer-logo">Cochinita Taquería</div>
+        <p class="footer-direccion">Condell 1050, Providencia, Santiago, Chile</p>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

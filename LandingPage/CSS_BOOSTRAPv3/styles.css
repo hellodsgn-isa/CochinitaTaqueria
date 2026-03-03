@@ -1,0 +1,140 @@
+/* 
+==================================================
+styles.css - Versión 3.3 (conviviendo con Bootstrap)
+Mantenemos solo los estilos de COLOR, TIPOGRAFÍA,
+DETALLES y efectos que nos dan personalidad.
+==================================================
+*/
+
+/* ---- Colores de marca (sobrescriben a Bootstrap) ---- */
+:root {
+    --rojo-mexicano: #d32f2f;
+    --amarillo-mostaza: #ffc107;
+    --crema-fondo: #fefbf7;
+}
+
+body {
+    background-color: var(--crema-fondo);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ---- Header (nuestro color, Bootstrap pone el resto) ---- */
+.navbar {
+    background-color: var(--rojo-mexicano) !important;
+}
+
+.navbar .nav-link:hover {
+    border-bottom: 3px solid var(--amarillo-mostaza);
+}
+
+/* ---- Hero (fondo con overlay) ---- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://placehold.co/1920x600') center/cover;
+    min-height: 60vh;
+}
+
+/* ---- Botón personalizado (usamos el amarillo mexicano) ---- */
+.btn-custom {
+    background-color: var(--amarillo-mostaza);
+    color: #333;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border: none;
+}
+.btn-custom:hover {
+    background-color: #ffb300;
+    transform: scale(1.05);
+}
+
+/* ---- Cards (nuestro diseño con sombra y hover) ---- */
+.menu-card {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+}
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    height: 180px;
+    background-color: #e0e0e0;
+}
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--amarillo-mostaza), var(--rojo-mexicano));
+    opacity: 0.7;
+}
+
+.menu-card h4 {
+    color: #333;
+    font-size: 1.4rem;
+}
+.menu-card p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ---- Formulario de reservas ---- */
+.reservas-section {
+    background-color: #f0f0f0;
+}
+.reservas-form {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.form-control:focus {
+    border-color: var(--amarillo-mostaza);
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.btn-reservar {
+    background-color: var(--rojo-mexicano);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem;
+    border: none;
+}
+.btn-reservar:hover {
+    background-color: #b71c1c;
+}
+
+/* ---- Footer ---- */
+.footer {
+    background-color: #333;
+    color: white;
+}
+.footer a {
+    color: var(--amarillo-mostaza);
+    text-decoration: none;
+}
+.footer a:hover {
+    color: white;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* ---- Ajustes responsive finos (muy pocos, Bootstrap ya hace casi todo) ---- */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 40vh;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+}

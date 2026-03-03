@@ -1,0 +1,315 @@
+/* 
+==================================================
+styles.css - Versión 2.2
+Estilos personalizados para Cochinita Taquería
+Inspirado en referencias mexicanas y de Land-book
+==================================================
+*/
+
+/* ---- Reset básico y estilos globales ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fefbf7; /* Un blanco cálido, como fondo de mantel */
+}
+
+/* ---- Header (Cabecera) ---- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #d32f2f; /* Rojo mexicano intenso */
+    color: white;
+    flex-wrap: wrap; /* Por si el logo es muy grande en móvil */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    /* Si usas imagen, ajusta el tamaño aquí */
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+.nav-menu a:hover {
+    border-bottom: 3px solid #ffc107; /* Un amarillo mostaza vibrante */
+}
+
+/* ---- Hero Section ---- */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://placehold.co/1920x600') center/cover; /* Imagen de fondo placeholder */
+    /* Reemplaza la URL con la imagen real de la taquería después */
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* ---- Botones (estilo base) ---- */
+.btn {
+    display: inline-block;
+    background-color: #ffc107; /* Amarillo mostaza */
+    color: #333;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px; /* Bordes redondeados estilo "botón" */
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #ffb300; /* Un tono más oscuro */
+    transform: scale(1.05); /* Efecto sutil de crecimiento */
+}
+
+/* ---- Sección Menú ---- */
+.menu-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.menu-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #d32f2f; /* Rojo del header */
+    position: relative;
+    display: inline-block;
+}
+/* Un pequeño detalle decorativo: una línea bajo el título */
+.menu-section h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ffc107;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-card {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card-image {
+    height: 180px;
+    background-color: #e0e0e0; /* Gris mientras no hay imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffc107, #d32f2f); /* Degradado mexicano */
+    opacity: 0.7;
+}
+/* Cuando pongas imágenes reales, quitas el .image-placeholder y usas <img> con object-fit */
+
+.menu-card h4 {
+    font-size: 1.4rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.menu-card p {
+    padding: 0 1rem 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ---- Sección Reservas ---- */
+.reservas-section {
+    background-color: #f0f0f0; /* Fondo gris claro para diferenciar */
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.reservas-section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #d32f2f;
+}
+
+.reservas-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ffc107; /* Amarillo al enfocar */
+    box-shadow: 0 0 0 3px rgba(255,193,7,0.2);
+}
+
+.btn-reservar {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #d32f2f;
+    color: white;
+}
+.btn-reservar:hover {
+    background-color: #b71c1c; /* Rojo más oscuro */
+    transform: none; /* Quitamos el scale para que no descoloque el layout */
+}
+
+/* ---- Footer ---- */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-direccion {
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffc107;
+    transform: translateY(-3px);
+}
+
+/* ---- Responsividad básica ---- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-menu ul {
+        margin-top: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}

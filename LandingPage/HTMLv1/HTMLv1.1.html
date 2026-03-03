@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cochinita Taquería</title>
+    <!-- 
+        Versión 1.1 - Estructura HTML puro 
+        Próximas versiones: CSS y Bootstrap
+    -->
+</head>
+<body>
+
+    <!-- 
+        ==================================================
+        CABECERA (Header)
+        Logo + Navegación
+        ==================================================
+    -->
+    <header>
+        <!-- Aquí irá el logo (texto o imagen) -->
+        <div>
+            <h1>Cochinita Taquería</h1> <!-- O un <img> para el logo -->
+        </div>
+
+        <!-- Menú de navegación principal -->
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Menú</a></li>
+                <li><a href="#">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 
+        ==================================================
+        CONTENIDO PRINCIPAL (Main)
+        ==================================================
+    -->
+    <main>
+
+        <!-- 
+            SECCIÓN HERO (Título y botón principal)
+        -->
+        <section>
+            <h2>Título del Sitio</h2> <!-- Ej: "La Taquería Más Auténtica de Chile" -->
+            <p>Subtítulo atractivo</p> <!-- Ej: "Tacos al pastor, cochinita pibil y más..." -->
+            <!-- 
+                Botón con la función de alerta que mencionaste
+                onclick="mostrarAlerta()" 
+                Nota: La función JS se añadirá en una versión futura.
+            -->
+            <button type="button">Botón</button> <!-- Texto del botón, ej: "Ver Menú" -->
+        </section>
+
+        <!-- 
+            SECCIÓN MENÚ DESTACADO (Cards)
+            Estructura de 4 cards en fila
+        -->
+        <section>
+            <h3>Nuestro Menú</h3>
+
+            <!-- Contenedor para las 4 cards -->
+            <div>
+                <!-- Card 1 -->
+                <article>
+                    <h4>Taco al Pastor</h4>
+                    <p>Descripción breve del platillo. Carne marinada, piña, cilantro y cebolla.</p>
+                    <!-- <img src="ruta/a/imagen1.jpg" alt="Taco al Pastor"> -->
+                    <div style="width: 100px; height: 100px; background: lightgray;">[Imagen]</div> <!-- Placeholder visual -->
+                </article>
+
+                <!-- Card 2 -->
+                <article>
+                    <h4>Cochinita Pibil</h4>
+                    <p>Descripción breve del platillo. Cochinita, cebolla morada y habanero.</p>
+                    <!-- <img src="ruta/a/imagen2.jpg" alt="Cochinita Pibil"> -->
+                    <div style="width: 100px; height: 100px; background: lightgray;">[Imagen]</div> <!-- Placeholder visual -->
+                </article>
+
+                <!-- Card 3 -->
+                <article>
+                    <h4>Quesadilla</h4>
+                    <p>Descripción breve del platillo. Queso derretido con la proteína de tu elección.</p>
+                    <!-- <img src="ruta/a/imagen3.jpg" alt="Quesadilla"> -->
+                    <div style="width: 100px; height: 100px; background: lightgray;">[Imagen]</div> <!-- Placeholder visual -->
+                </article>
+
+                <!-- Card 4 -->
+                <article>
+                    <h4>Elote Callejero</h4>
+                    <p>Descripción breve del platillo. Elote, mayonesa, queso y chile en polvo.</p>
+                    <!-- <img src="ruta/a/imagen4.jpg" alt="Elote Callejero"> -->
+                    <div style="width: 100px; height: 100px; background: lightgray;">[Imagen]</div> <!-- Placeholder visual -->
+                </article>
+            </div>
+        </section>
+
+        <!-- 
+            SECCIÓN FORMULARIO DE RESERVAS
+        -->
+        <section>
+            <h3>Reserva tu Mesa</h3>
+
+            <!-- El formulario en sí -->
+            <form action="#" method="post">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+                <div>
+                    <label for="personas">Número de Personas</label>
+                    <input type="number" id="personas" name="personas" min="1" max="10" required>
+                </div>
+
+                <!-- 
+                    Botón de reserva con las funciones JS que mencionaste
+                    onclick="alert('Formulario enviado'); document.getElementById('...').innerText = 'Reserva Confirmada';"
+                    Nota: La función JS se refinará en versiones futuras.
+                -->
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- 
+        ==================================================
+        PIE DE PÁGINA (Footer)
+        ==================================================
+    -->
+    <footer>
+        <!-- Logo pequeño o nombre -->
+        <div>Cochinita Taquería</div>
+
+        <!-- Dirección -->
+        <p>Condell 1050, Providencia, Santiago, Chile</p>
+
+        <!-- Enlaces del footer (legales, contacto, etc.) -->
+        <nav>
+            <ul>
+                <li><a href="#">Enlace 1</a></li> <!-- Ej: "Términos y Condiciones" -->
+                <li><a href="#">Enlace 2</a></li> <!-- Ej: "Política de Privacidad" -->
+                <li><a href="#">Enlace 3</a></li> <!-- Ej: "Contacto" -->
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- 
+        Espacio para futuros scripts (JavaScript)
+        <script src="script.js"></script>
+    -->
+</body>
+</html>
