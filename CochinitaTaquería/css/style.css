@@ -3,9 +3,28 @@
    Estilos personalizados (v5.0)
    ============================================ */
 
+/* Definir la fuente personalizada */
+@font-face {
+    font-family: 'Kirsty Bold';
+    src: url('../fonts/Kirsty Bd.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap; /* Mejora el rendimiento */
+}
+
+/* Para Nuestro Menú */
+.menu-section h2,
+/* Para Sistema de Reservas */
+.reservas-section h2,
+/* Por si acaso, también el que ya funcionó */
+.navbar-brand {
+    font-family: 'Kirsty Bold', sans-serif !important;
+    font-weight: bold;
+}
+
 :root {
-    --rojo-mexicano: #d32f2f;
-    --amarillo-mostaza: #ffc107;
+    --rojo-mexicano: #fa6a8e;
+    --amarillo-mostaza: #e2ff9f;
     --crema-fondo: #fefbf7;
 }
 
@@ -43,8 +62,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('../img/back1.jpg') center/cover;
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -60,10 +79,11 @@ body {
     border: none;
     transition: all 0.3s;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 26rem;
 }
 
 .btn-custom:hover {
-    background-color: #ffb300;
+    background-color: #acd882;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.3);
     color: #333;
